@@ -12,10 +12,10 @@ const VendorCard = ({ vendor }: VendorCardProps) => {
   return (
     <button
       onClick={() => navigate(`/vendor/${vendor.id}`)}
-      className="group relative flex w-full gap-3 rounded-2xl bg-card p-3 text-left transition-all duration-200 vendor-card-shadow hover:vendor-card-shadow-hover animate-slide-up"
+      className="group relative flex w-full gap-3 rounded-2xl p-3 text-left glass-surface vendor-card-shadow hover:vendor-card-shadow-hover hover-lift soft-glow transition-all duration-300 ease-in-out animate-slide-up"
     >
       {/* Image */}
-      <div className="relative h-28 w-28 shrink-0 overflow-hidden rounded-xl">
+      <div className="relative h-28 w-28 shrink-0 overflow-hidden rounded-2xl">
         <img
           src={vendor.image}
           alt={vendor.name}
@@ -23,7 +23,7 @@ const VendorCard = ({ vendor }: VendorCardProps) => {
           loading="lazy"
         />
         {vendor.isFeatured && (
-          <span className="absolute left-1.5 top-1.5 rounded-full bg-vendor-featured px-2 py-0.5 text-[10px] font-bold text-foreground">
+          <span className="absolute left-2 top-2 rounded-full bg-vendor-featured px-2 py-0.5 text-[10px] font-extrabold text-foreground shadow-sm">
             ⭐ Featured
           </span>
         )}
@@ -33,7 +33,7 @@ const VendorCard = ({ vendor }: VendorCardProps) => {
       <div className="flex min-w-0 flex-1 flex-col justify-between py-0.5">
         <div>
           <div className="flex items-start justify-between gap-2">
-            <h3 className="truncate text-sm font-bold text-foreground">{vendor.name}</h3>
+            <h3 className="truncate text-sm font-extrabold text-foreground">{vendor.name}</h3>
             <span
               className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-bold ${
                 vendor.isOpen
@@ -59,7 +59,7 @@ const VendorCard = ({ vendor }: VendorCardProps) => {
           </span>
           <span className="flex items-center gap-1">
             <Clock className="h-3 w-3" />
-            {vendor.closeTime}
+            Till {vendor.closeTime}
           </span>
         </div>
 
@@ -68,7 +68,7 @@ const VendorCard = ({ vendor }: VendorCardProps) => {
           {vendor.products.slice(0, 2).map((p) => (
             <span
               key={p.id}
-              className="truncate rounded-md bg-secondary px-2 py-0.5 text-[10px] font-semibold text-secondary-foreground"
+              className="truncate rounded-full bg-secondary px-2.5 py-1 text-[10px] font-semibold text-secondary-foreground transition-colors group-hover:bg-muted"
             >
               {p.name} · ₹{p.price}/{p.unit}
             </span>

@@ -29,7 +29,7 @@ const Index = () => {
   const otherVendors = filtered.filter((v) => !v.isFeatured);
 
   return (
-    <div className="min-h-screen bg-background pb-20">
+    <div className="min-h-screen bg-background app-gradient pb-20">
       {/* Header */}
       <header className="sticky top-0 z-30 glass-effect border-b border-border/50 px-4 pb-3 pt-4">
         <div className="mx-auto max-w-lg">
@@ -39,11 +39,11 @@ const Index = () => {
                 <MapPin className="h-4 w-4 text-primary-foreground" />
               </div>
               <div>
-                <p className="text-[10px] font-medium text-muted-foreground">Delivering to</p>
+                <p className="text-[10px] font-medium text-muted-foreground">Current</p>
                 <p className="text-sm font-bold text-foreground">Sector 15, Noida ▾</p>
               </div>
             </div>
-            <button className="relative rounded-full bg-secondary p-2.5 transition-colors hover:bg-muted">
+            <button className="relative rounded-full bg-secondary p-2.5 transition-all duration-300 ease-in-out hover:bg-muted">
               <Bell className="h-5 w-5 text-foreground" />
               <span className="absolute right-1.5 top-1.5 h-2 w-2 rounded-full bg-primary" />
             </button>
@@ -95,24 +95,30 @@ const Index = () => {
       </main>
 
       {/* Bottom Nav */}
-      <nav className="fixed bottom-0 left-0 right-0 z-40 border-t border-border bg-card">
+      <nav className="fixed bottom-0 left-0 right-0 z-40 border-t border-border/60 glass-effect">
         <div className="mx-auto flex max-w-lg items-center justify-around py-2">
           <button className="flex flex-col items-center gap-0.5 px-4 py-1 text-primary">
             <MapPin className="h-5 w-5" />
             <span className="text-[10px] font-semibold">Explore</span>
           </button>
-          <button className="flex flex-col items-center gap-0.5 px-4 py-1 text-muted-foreground transition-colors hover:text-foreground">
+          <button
+            onClick={() => navigate("/deals")}
+            className="flex flex-col items-center gap-0.5 px-4 py-1 text-muted-foreground transition-all duration-300 ease-in-out hover:text-foreground"
+          >
             <Bell className="h-5 w-5" />
             <span className="text-[10px] font-medium">Deals</span>
           </button>
           <button
             onClick={() => navigate("/vendor-dashboard")}
-            className="flex flex-col items-center gap-0.5 px-4 py-1 text-muted-foreground transition-colors hover:text-foreground"
+            className="flex flex-col items-center gap-0.5 px-4 py-1 text-muted-foreground transition-all duration-300 ease-in-out hover:text-foreground"
           >
             <Store className="h-5 w-5" />
             <span className="text-[10px] font-medium">Sell</span>
           </button>
-          <button className="flex flex-col items-center gap-0.5 px-4 py-1 text-muted-foreground transition-colors hover:text-foreground">
+          <button
+            onClick={() => navigate("/profile")}
+            className="flex flex-col items-center gap-0.5 px-4 py-1 text-muted-foreground transition-all duration-300 ease-in-out hover:text-foreground"
+          >
             <User className="h-5 w-5" />
             <span className="text-[10px] font-medium">Profile</span>
           </button>

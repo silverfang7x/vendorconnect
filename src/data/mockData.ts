@@ -27,6 +27,29 @@ export interface Vendor {
   closeTime: string;
 }
 
+export interface Deal {
+  id: string;
+  title: string;
+  description: string;
+  vendorId: string;
+  vendorName: string;
+  category: string;
+  badge?: string;
+  discountLabel: string;
+  validTill: string;
+}
+
+export interface UserProfile {
+  id: string;
+  name: string;
+  phone: string;
+  city: string;
+  defaultAddress: string;
+  memberSince: string;
+  favoritesVendorIds: string[];
+  recentVendorIds: string[];
+}
+
 export const categories = [
   { id: "all", name: "All", icon: "🏪" },
   { id: "food", name: "Food", icon: "🍛" },
@@ -185,4 +208,153 @@ export const vendors: Vendor[] = [
       { id: "p26", name: "Electrical Wiring", price: 200, unit: "hr", available: true },
     ],
   },
+  {
+    id: "7",
+    name: "Sharma Ji Chaat Bhandar",
+    category: "snacks",
+    description: "Crispy samosas, kachori, and spicy chutneys. Evening snacks that hit the spot.",
+    image: "https://images.unsplash.com/photo-1604908554097-955f41a65133?w=400&h=300&fit=crop",
+    rating: 4.6,
+    reviews: 342,
+    distance: "1.0 km",
+    isOpen: true,
+    isFeatured: true,
+    phone: "+91 98765 43216",
+    address: "Near Raja Mandi, Agra",
+    lat: 27.1950,
+    lng: 78.0110,
+    openTime: "3:00 PM",
+    closeTime: "10:30 PM",
+    products: [
+      { id: "p27", name: "Samosa", price: 15, unit: "piece", available: true },
+      { id: "p28", name: "Kachori", price: 20, unit: "piece", available: true },
+      { id: "p29", name: "Chai", price: 10, unit: "cup", available: true },
+    ],
+  },
+  {
+    id: "8",
+    name: "Raju Auto Repairs",
+    category: "services",
+    description: "Two-wheeler servicing, puncture, brake tuning, and on-road assistance.",
+    image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=400&h=300&fit=crop",
+    rating: 4.4,
+    reviews: 121,
+    distance: "2.1 km",
+    isOpen: true,
+    isFeatured: false,
+    phone: "+91 98765 43217",
+    address: "Khandari Crossing, Agra",
+    lat: 27.2108,
+    lng: 78.0042,
+    openTime: "9:30 AM",
+    closeTime: "8:30 PM",
+    products: [
+      { id: "p30", name: "Puncture Repair", price: 50, unit: "service", available: true },
+      { id: "p31", name: "Chain Lube", price: 80, unit: "service", available: true },
+      { id: "p32", name: "Basic Service", price: 299, unit: "service", available: true },
+    ],
+  },
+  {
+    id: "9",
+    name: "Fresh Farm Veggies",
+    category: "vegetables",
+    description: "Clean, sorted veggies and seasonal greens. Delivery in under 45 minutes.",
+    image: "https://images.unsplash.com/photo-1542838132-92c53300491e?w=400&h=300&fit=crop",
+    rating: 4.5,
+    reviews: 204,
+    distance: "1.7 km",
+    isOpen: true,
+    isFeatured: false,
+    phone: "+91 98765 43218",
+    address: "Sikandra, Agra",
+    lat: 27.2266,
+    lng: 77.9763,
+    openTime: "6:30 AM",
+    closeTime: "9:00 PM",
+    products: [
+      { id: "p33", name: "Bhindi", price: 60, unit: "kg", available: true },
+      { id: "p34", name: "Palak", price: 20, unit: "bunch", available: true },
+      { id: "p35", name: "Cauliflower", price: 45, unit: "piece", available: true },
+    ],
+  },
+  {
+    id: "10",
+    name: "Gupta Mobile Repairs",
+    category: "services",
+    description: "Phone screen, battery, charging port repairs with same-day pickup & drop.",
+    image: "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=400&h=300&fit=crop",
+    rating: 4.7,
+    reviews: 410,
+    distance: "2.8 km",
+    isOpen: true,
+    isFeatured: true,
+    phone: "+91 98765 43219",
+    address: "Sadar Bazaar, Agra Cantt",
+    lat: 27.1607,
+    lng: 78.0117,
+    openTime: "11:00 AM",
+    closeTime: "9:00 PM",
+    products: [
+      { id: "p36", name: "Screen Guard", price: 99, unit: "piece", available: true },
+      { id: "p37", name: "Charging Port Fix", price: 399, unit: "service", available: true },
+      { id: "p38", name: "Battery Replacement", price: 899, unit: "service", available: true },
+    ],
+  },
 ];
+
+export const deals: Deal[] = [
+  {
+    id: "d1",
+    title: "10% off on Fresh Mangoes",
+    description: "Buy 2kg+ Alphonso and get 10% off. Limited stock today.",
+    vendorId: "1",
+    vendorName: "Ramu's Fresh Fruits",
+    category: "fruits",
+    badge: "Today",
+    discountLabel: "10% OFF",
+    validTill: "Tonight 9:00 PM",
+  },
+  {
+    id: "d2",
+    title: "Combo: Golgappe + Tikki",
+    description: "Combo plate at a special price. Perfect for evening cravings.",
+    vendorId: "4",
+    vendorName: "Guddu Bhai Chaat Corner",
+    category: "food",
+    badge: "Popular",
+    discountLabel: "₹69 COMBO",
+    validTill: "This week",
+  },
+  {
+    id: "d3",
+    title: "Free Delivery on Grocery",
+    description: "Free delivery within 1km on orders above ₹299.",
+    vendorId: "2",
+    vendorName: "Sharma Ji Ki Dukaan",
+    category: "grocery",
+    discountLabel: "FREE DELIVERY",
+    validTill: "Next 3 days",
+  },
+  {
+    id: "d4",
+    title: "Bike Puncture Fix (Agra Special)",
+    description: "Quick puncture fix at your doorstep in Agra Cantt & nearby areas.",
+    vendorId: "6",
+    vendorName: "Quick Fix Repairs",
+    category: "services",
+    badge: "Agra",
+    discountLabel: "₹99 START",
+    validTill: "This month",
+  },
+];
+
+export const userProfile: UserProfile = {
+  id: "u1",
+  name: "Aarav Sharma",
+  phone: "+91 98765 40001",
+  city: "Agra",
+  defaultAddress: "Near Sadar Bazaar, Agra Cantt",
+  memberSince: "Jan 2025",
+  favoritesVendorIds: ["4", "1"],
+  recentVendorIds: ["2", "6", "4"],
+};

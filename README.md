@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: (https://vendorconnect.lovable.app)
+**URL**: https://vendorconnect.vercel.app
 
 ## How can I edit this code?
 
